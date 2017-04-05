@@ -110,6 +110,14 @@ header{
                         }
                     }
                 }
+                &.current-menu-item{
+                    a{
+                        text-decoration: none;
+                        &:before{
+                            transform: scale(1);
+                        }
+                    }
+                }
             }
         }
     }
@@ -135,7 +143,7 @@ footer{
 }
 h2{
    font-weight: 300;
-   font-size: 32px;
+   font-size: 40px;
    &.red{
        color: $red;
    }
@@ -291,4 +299,152 @@ h3{
                 background-image: url(images/angle-right.png);
             }
         } 
+}
+.leprojet{
+    h4{
+        font-size: 18px;
+        color: $red;
+        font-weight: 600;
+    }
+    .link-download{
+        color: red;
+    }
+    .content-leprojet{
+        margin-top: 45px;
+    }
+}
+.production{
+    h2{
+        margin-bottom: 60px;
+    }
+    h3{
+            font-size: 22px;
+            color: $red;
+            font-weight: 600;
+        }
+    li{     
+        figure{
+            figcaption{
+                background-color: rgba(#000, .4);
+                justify-content: center;
+                align-items: flex-end;
+                a{
+                    margin-bottom: 15px;
+                    display: inline-block;
+                    border: 2px solid #fff;
+                    background-image: url(images/fleche-plus.png);
+                    background-repeat: no-repeat;
+                    background-position: right 7px center;
+                    padding: 10px 35px 10px 10px;
+                    font-size: 18px;
+                    font-weight: 600;
+                    text-decoration: none !important;
+                    &:hover{
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+.supportVideo{
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    iframe{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+.conference{
+    li{
+        padding-bottom: 63px;
+        position: relative;
+        h3{
+            font-weight: 300;
+            margin-bottom: 0;
+        }
+        .date{
+            font-size: 22px;
+            color: $red;
+            text-align: center;
+            font-weight: 300;
+            text-transform: capitalize;
+        }
+        .pos-link{
+            position: absolute;
+            bottom: 0;
+            right:0;
+            .lien-cont-link{
+                display: inline-block;
+                .lien-link{
+                    display: inline-block;
+                    width: 34px;
+                    height: 63px;
+                    background-image: url(images/angle-right-red.png);
+                }
+            }
+        }             
+    }
+}
+.item-conference{
+    .bg-color{
+        background-color: #bcbbbc;
+        padding: 60px 45px;
+    }
+    h3{
+        font-size: 26px;
+        color: $red;
+        text-align: center;
+        font-weight: 300;
+    }
+    .set-flex{
+        display: flex;
+        align-items: center;
+    }
+    .uk-slidenav-position{
+        position: relative;
+        .uk-slidenav{
+            position: absolute;
+            top: calc(50% - 31px);
+            background-repeat: no-repeat;
+            display: inline-block;
+            width: 34px;
+            height: 63px;
+            &.uk-slidenav-next{
+                background-image: url(images/angle-right-red.png);
+                right: -40px;
+            }
+            &.uk-slidenav-previous{
+                background-image: url(images/angle-right-red.png);
+                left: -40px;
+                transform: rotate(180deg);
+                transform-origin: center;
+            }
+        }
+    }
+    .list-compte{
+        padding-left: 0;
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        li{
+            width: 29.33%;
+            display: flex;
+            justify-content: space-between;
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-bottom: 7px;
+            a{
+                display: inline-block;
+                width: 12px;
+                height: 16px;
+                background-image: url(images/pdf-small.png);
+            }
+        }
+    }
 }

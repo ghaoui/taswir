@@ -25,7 +25,7 @@
 </section>
 <section class="actualite">
     <div class="container">
-        <h2 class="white">ACTUALITÉS</h2>
+        <h2 class="white">A LA UNE</h2>
         <div data-uk-slideset="{default: 1, animation: 'slide-horizontal'}">
             <div class="uk-slidenav-position">
                 <ul class="uk-grid uk-slideset">

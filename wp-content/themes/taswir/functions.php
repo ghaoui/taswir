@@ -95,6 +95,26 @@ function create_post_type() {
 		  'supports' => array('title','editor'),
 		)
 	);
+        register_post_type( 'production',
+		array(
+		  'labels' => array(
+		    'name' => __( 'TASWIR PRODUCTIONS' )
+		  ),
+		  'public' => true,
+		  'supports' => array('title','editor'),
+                  'has_archive' => true
+		)
+	);
+        register_post_type( 'conference',
+		array(
+		  'labels' => array(
+		    'name' => __( 'CONFERENCE CINEMA' )
+		  ),
+		  'public' => true,
+		  'supports' => array('title','editor'),
+                  'has_archive' => true
+		)
+	);
 }
 add_action( 'init', 'create_post_type' );
 
