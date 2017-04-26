@@ -5,18 +5,19 @@
 ?>
 <section class="block-title affiche">
     <div class="container">        
-        <h2 class="red"><?php the_title();?></h2>
+        <h2 class="red"><?php the_title();?></h2>    
     </div>
 </section>
-<section class="block-content affiche production-single">
+<section class="edito production item-conference bg-orange-motif">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-4" data-uk-scrollspy="{cls:'uk-animation-slide-left'}">
-                <img src="<?php the_field('affiche');?>">
+        <div class="row" data-uk-grid-match="{target: '.match'}">
+            <div class="col-lg-4 col-lg-offset-2" data-uk-scrollspy="{cls:'uk-animation-slide-left'}">
+                
+                <div class="match set-flex">
+                    <img src="<?php the_field('image');?>">
+                </div>                
             </div>
-            <div class="col-lg-8" data-uk-scrollspy="{cls:'uk-animation-slide-right'}">
-                <h3>SYNOPSIS</h3>
-                <?php the_content();?>
+            <div class="col-lg-4" data-uk-scrollspy="{cls:'uk-animation-slide-right'}">
                 <ul class="list-compte single">
                     <?php 
                         if( have_rows('compte_rendue') ):
@@ -32,14 +33,10 @@
                     ?>
 
                 </ul>
+                                   
             </div>
-        </div>      
-    </div>
-</section>
-<section class="edito production bg-orange-motif">
-    <div class="container" >
-        <h3 class="uk-margin-large-top white">BANDE ANNONCE</h3>
-        <div class="supportVideo"><?php the_field('bande-annonce');?></div>
+        </div>
+        
     </div>
 </section>
 <?php                     

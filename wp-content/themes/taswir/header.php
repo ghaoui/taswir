@@ -12,7 +12,7 @@
         <section class="top-header">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4"><div class="pierre">LYCéE PIERRE MENDES FRANCE TUNIS</div></div>
+                    <div class="col-lg-4"><div class="pierre">LYCéE PIERRE MENDES FRANCE<br><span>TUNIS</span></div></div>
                     <div class="col-lg-4 text-center">
                         <a class="logo" href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo.png" alt=""></a>
                     </div>

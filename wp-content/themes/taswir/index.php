@@ -47,11 +47,11 @@
                                     <?php the_field('video');?>
                                 </div>
                             </div>
-                            <div class="uk-width-medium-1-2">
+                            <div class="uk-width-medium-1-2 uk-position-relative">
                                 <div class="act-content"><?php the_content();?></div>
                                 <div class="text-right">
-                                    <div class="act-cont-link text-right uk-animation-hover">
-                                        <a href="<?php the_permalink();?>" class="act-link uk-animation-slide-left"></a>
+                                    <div class="act-cont-link text-right">
+                                        <a href="<?php the_permalink();?>" class="act-link"><span></span></a>
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
 <section class="peac">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-uk-scrollspy="{cls:'uk-animation-slide-left'}" >
                 <h2 class="white">P.E.A.C</h2>
                 <?php 
                     $args  = array(
@@ -88,19 +88,20 @@
                     <?php the_post_thumbnail('post-thumbnail', array(
                         'class' => 'js-tilt'
                     )) ?>
-                    <div class="uk-animation-hover peac-cont-link"><a href="<?php the_permalink();?>" class="peac-link uk-animation-slide-left"></a></div>
+                    
                 </figure>
                 <div class="download">
                     <a href="<?php the_field('file');?>" download><?php the_title();?></a>
                 </div>
                 <div class="sub-title"><?php the_field('sub-title');?></div>
+                <div class="peac-cont-link"><a href="<?php the_permalink();?>" class="peac-link"><span></span></a></div>
                 <?php
                         endwhile;
                         wp_reset_postdata(); 
                     endif; 
                 ?>
             </div>
-            <div class="col-lg-offset-2 col-lg-4">
+            <div class="col-lg-offset-2 col-lg-4" data-uk-scrollspy="{cls:'uk-animation-slide-right'}">
                 <h2 class="white">LIENS</h2>
                 <?php 
                     $args  = array(
@@ -121,7 +122,7 @@
                         wp_reset_postdata(); 
                     endif; 
                 ?>
-                <div class="text-right"><div class="uk-animation-hover lien-cont-link"><a href="<?php the_permalink();?>" class="lien-link uk-animation-slide-left"></a></div></div>
+                <div class="text-right"><div class="lien-cont-link"><a href="<?php the_permalink();?>" class="lien-link"><span></span></a></div></div>
             </div>
         </div>
     </div>

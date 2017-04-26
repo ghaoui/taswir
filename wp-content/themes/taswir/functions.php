@@ -9,6 +9,7 @@ function awesome_script_enqueue() {
     wp_enqueue_style('jquery-ui_css', get_template_directory_uri() . '/css/jquery-ui.min.css', array(), '1.0.0', 'all');
     wp_enqueue_style('sticky_css', get_template_directory_uri() . '/css/sticky.min.css', array(), '1.0.0', 'all');
     wp_enqueue_style('hover_css', get_template_directory_uri() . '/css/hover-min.css', array(), '1.0.0', 'all');
+      wp_enqueue_style('accordion_css', get_template_directory_uri() . '/css/accordion.min.css', array(), '1.0.0', 'all');
     wp_enqueue_style('style', get_template_directory_uri() . '/style.css', array(), '1.0.0', 'all');
     
     //wp_enqueue_script('my_jquery', get_template_directory_uri() . '/js/jquery-1.12.4.min.js', array(), '1.12.4', true);
@@ -27,7 +28,7 @@ function awesome_script_enqueue() {
     //wp_enqueue_script('parallax_js', get_template_directory_uri() . '/js/jquery.parallax-1.1.3.js', array(), '1.0.0', true);
     wp_enqueue_script('lightbox_js', get_template_directory_uri() . '/js/lightbox.min.js', array(), '1.0.0', true);
     wp_enqueue_script('tilt_js', get_template_directory_uri() . '/js/tilt.js', array(), '1.0.0', true);
-    
+    wp_enqueue_script('accordion_js', get_template_directory_uri() . '/js/accordion.min.js', array(), '1.0.0', true);
     
     wp_enqueue_script('myscript_js', get_template_directory_uri() . '/js/script.js', array(), '1', true);
    // wp_enqueue_script('maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDS23LOuwI9Ar-5m08oB9qf8kqXw4PbEOs&callback=initMap', array(), '1', true);
@@ -62,7 +63,7 @@ function create_post_type() {
         register_post_type( 'actualite',
 		array(
 		  'labels' => array(
-		    'name' => __( 'Actualités' )
+		    'name' => __( 'A la Une' )
 		  ),
 		  'public' => true,
 		  'supports' => array('title', 'editor'),
@@ -109,6 +110,26 @@ function create_post_type() {
 		array(
 		  'labels' => array(
 		    'name' => __( 'CONFERENCE CINEMA' )
+		  ),
+		  'public' => true,
+		  'supports' => array('title','editor'),
+                  'has_archive' => true
+		)
+	);
+        register_post_type( 'affiche',
+		array(
+		  'labels' => array(
+		    'name' => __( 'L\'AFFICHE' )
+		  ),
+		  'public' => true,
+		  'supports' => array('title','editor'),
+                  'has_archive' => true
+		)
+	);
+        register_post_type( 'ateliers',
+		array(
+		  'labels' => array(
+		    'name' => __( 'ATELIERS' )
 		  ),
 		  'public' => true,
 		  'supports' => array('title','editor'),

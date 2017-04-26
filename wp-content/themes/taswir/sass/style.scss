@@ -47,16 +47,21 @@ header{
     .top-header{
         margin-top: 10px;
         .pierre{
-            margin-top: 15px;
-            font-size: 18px;
-            font-weight: 700;
+            margin-top: 39px;
+            font-size: 15px;
+            font-weight: 600;
             color: #0254a3;
             text-transform: uppercase;
+            text-align: center;
+            span{
+                color: #e43d22;
+            }
         }
         padding-bottom: 15px;
     }
     .menu-section{
         background-color: $red;
+        background-image: url(images/bg-menu.png);
         .menu{
             display: flex;
             list-style: none;
@@ -69,7 +74,7 @@ header{
                 padding: 15px 7px;
                 a{
                     color: #fff;
-                    font-weight: 600;
+                    font-weight: 400;
                     position: relative;
                     
                     &:before{
@@ -158,15 +163,115 @@ h3{
        color: $red;
    }
    &.white{
-       color: #fff;
+       color: #fff !important;
    }
+}
+.block-title{
+    padding-top: 45px;
+    padding-bottom: 30px;
+    &.affiche{
+        background-color: #e0e1e2;
+    }
+    &.production{
+        padding-bottom: 60px;
+    }
+}
+.block-content{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    &.affiche{
+        border-bottom: 4px solid #e0e1e2;
+        background-color: #3c3e48;
+        p{
+            color: #fff;
+        }
+        .list-compte{
+            margin-top: 45px;
+            li{
+                h3{
+                    color: #fff;
+                }
+                a{
+                    background-image: url(images/pdf-small-white.png);
+                    width: 20px;
+                    height: 24px;
+                }
+            }
+        }
+        &.production-single{
+            h3{
+                color: #e43d22;
+            }
+            .list-compte{
+                padding-left: 0;
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                li{
+                    width: 29.33%;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-left: 2%;
+                    margin-right: 2%;
+                    margin-bottom: 7px;
+                    color: #fff;
+                    a{
+                        display: inline-block;
+                        background-image: url(images/pdf-small-white.png);
+                        width: 20px;
+                        height: 24px;                        
+                    }
+                }
+                &.single{
+                    display: list-item;
+                    li{
+                        width: 60%;
+                    }
+                }
+            }
+        }
+    }
 }
 .edito{
     padding-top: 45px;
     padding-bottom: 45px;
     background-color: #e0e1e2;
+    position: relative;
     p{
         text-align: justify;
+    }
+    &.bg-orange-motif{
+        background-image: url(images/bg-peac.png);
+        background-position: center;
+        background-color: rgb(228, 61, 34);
+    }
+    &.bg-orange{
+        background-color: rgb(228, 61, 34);
+        h3{
+            color: #fff;
+        }
+        .list-compte{
+            li{
+                .name{
+                    color: #fff;
+                }
+                a{
+                    background-image: url(images/pdf-small-white.png);
+                    width: 20px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+    &:before{
+        content: '';
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        height: 5px;
+        background-color: $red;
+        z-index: 2;
+        position: absolute;
     }
 }
 .actualite{
@@ -194,10 +299,26 @@ h3{
     .act-cont-link{
         display: inline-block;
         .act-link{
-            display: inline-block;
-            width: 34px;
-            height: 63px;
-            background-image: url(images/angle-right.png);
+            span{
+               position: absolute;
+                bottom: -10px;
+                right: 0;
+                display: block;
+                text-indent: -4000px;
+                width: 44px;
+                height: 44px;
+                background: transparent url(images/lien_coin_fleche.png) no-repeat left bottom;
+                transition: all .25s ease-in-out;
+                -moz-transition: all .25s ease-in-out;
+                -webkit-transition: all .25s ease-in-out;
+                -ms-transition: all .25s ease-in-out;
+                -o-transition: all .25s ease-in-out; 
+            }
+            &:hover{
+                span{
+                    background-position: right top;
+                }
+            }
         }
     }
     .uk-slideset-nav{
@@ -260,19 +381,36 @@ h3{
             cursor: pointer;
             border-radius: 5px;
         }
-        .peac-cont-link{
+               
+    }
+    .peac-cont-link{
             display: inline-block;
             position: absolute;
             bottom: 0;
             right: 0;
             .peac-link{
-                display: inline-block;
-                width: 34px;
-                height: 63px;
-                background-image: url(images/angle-right.png);
+                span{
+              /* position: absolute;
+                bottom: -10px;
+                right: 0;*/
+                display: block;
+                text-indent: -4000px;
+                width: 44px;
+                height: 44px;
+                background: transparent url(images/lien_coin_fleche-red.png) no-repeat left bottom;
+                transition: all .25s ease-in-out;
+                -moz-transition: all .25s ease-in-out;
+                -webkit-transition: all .25s ease-in-out;
+                -ms-transition: all .25s ease-in-out;
+                -o-transition: all .25s ease-in-out; 
             }
-        }        
-    }
+            &:hover{
+                span{
+                    background-position: right top;
+                }
+            }
+            }
+        } 
     .download{
         a{
             background-image: url(images/pdf.png);
@@ -293,10 +431,26 @@ h3{
     .lien-cont-link{
             display: inline-block;
             .lien-link{
-                display: inline-block;
-                width: 34px;
-                height: 63px;
-                background-image: url(images/angle-right.png);
+                span{
+              /* position: absolute;
+                bottom: -10px;
+                right: 0;*/
+                display: block;
+                text-indent: -4000px;
+                width: 44px;
+                height: 44px;
+                background: transparent url(images/lien_coin_fleche-red.png) no-repeat left bottom;
+                transition: all .25s ease-in-out;
+                -moz-transition: all .25s ease-in-out;
+                -webkit-transition: all .25s ease-in-out;
+                -ms-transition: all .25s ease-in-out;
+                -o-transition: all .25s ease-in-out; 
+            }
+            &:hover{
+                span{
+                    background-position: right top;
+                }
+            }
             }
         } 
 }
@@ -323,6 +477,7 @@ h3{
             font-weight: 600;
         }
     li{     
+        opacity: 0;
         figure{
             figcaption{
                 background-color: rgba(#000, .4);
@@ -344,6 +499,14 @@ h3{
                     }
                 }
             }
+        }
+    }
+    &.bg-orange-motif{
+        h3{
+           /* margin-top: -75px;*/
+           &.ts-margin-top-negative{
+               margin-top: -75px;
+           }
         }
     }
 }
@@ -382,13 +545,42 @@ h3{
             .lien-cont-link{
                 display: inline-block;
                 .lien-link{
-                    display: inline-block;
-                    width: 34px;
-                    height: 63px;
-                    background-image: url(images/angle-right-red.png);
+                    span{
+              /* position: absolute;
+                bottom: -10px;
+                right: 0;*/
+                display: block;
+                text-indent: -4000px;
+                width: 44px;
+                height: 44px;
+                background: transparent url(images/lien_coin_fleche-red.png) no-repeat left bottom;
+                transition: all .25s ease-in-out;
+                -moz-transition: all .25s ease-in-out;
+                -webkit-transition: all .25s ease-in-out;
+                -ms-transition: all .25s ease-in-out;
+                -o-transition: all .25s ease-in-out; 
+            }
+            &:hover{
+                span{
+                    background-position: right top;
+                }
+            }
                 }
             }
         }             
+    }
+    &.bg-orange-motif{
+        li{
+            h3{
+                color: #fff;
+            }
+            .date{
+                color: #fff;
+            }
+            p{
+                color: #fff;
+            }
+        }
     }
 }
 .item-conference{
@@ -426,6 +618,11 @@ h3{
                 transform-origin: center;
             }
         }
+        .uk-slider{
+            li{
+                opacity: 1;
+            }
+        }
     }
     .list-compte{
         padding-left: 0;
@@ -439,6 +636,7 @@ h3{
             margin-left: 2%;
             margin-right: 2%;
             margin-bottom: 7px;
+            opacity: 1;
             a{
                 display: inline-block;
                 width: 12px;
@@ -446,5 +644,130 @@ h3{
                 background-image: url(images/pdf-small.png);
             }
         }
+        &.single{
+            display: list-item;
+            li{
+                width: 80%;
+            }
+        }
+    }
+    &.bg-orange-motif{
+        .list-compte{
+            li{
+                color: #fff;
+                a{
+                    background-image: url(images/pdf-small-white.png);
+                    width: 20px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+}
+.peacpage{
+    .content-flex-peac{
+        display: flex;
+        justify-content: space-around;
+    }
+    .uk-accordion{
+        margin-top: 45px;
+        .uk-accordion-title{
+            background-color: transparent;
+            font-weight: 300;
+        }
+        .uk-accordion-content{
+            .list-compte{
+                padding-left: 0;
+                list-style: none;
+                li{
+                    width: 29.33%;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 7px;
+                    opacity: 1;
+                    a{
+                        display: inline-block;
+                        width: 12px;
+                        height: 16px;
+                        background-image: url(images/pdf-small.png);
+                    }
+                }
+            }
+        }
+    }
+    &.bg-orange-motif{
+        .uk-accordion{
+            .uk-accordion-title{
+                color: #fff;
+            }
+            .list-compte{
+                li{
+                    .name{
+                        color: #fff;
+                    }
+                    a{
+                        background-image: url(images/pdf-small-white.png);
+                        width: 20px;
+                        height: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
+.ateliers{
+    .list-compte{
+        padding-left: 0;
+        list-style: none;
+        margin-bottom: 60px;
+        li{
+            width: 50%;
+            margin-bottom: 7px;
+            h3{
+                font-weight: 300;
+                float: left;
+            }
+            a{
+                display: inline-block;
+                width: 12px;
+                height: 16px;
+                background-image: url(images/pdf-small.png);
+                float: right;
+            }
+        }
+    }
+    .gal{
+        font-size: 28px;
+        font-weight: 300;
+    }
+    .uk-slidenav-position{
+        position: relative;
+        .uk-slidenav{
+            position: absolute;
+            top: calc(50% - 31px);
+            background-repeat: no-repeat;
+            display: inline-block;
+            width: 34px;
+            height: 63px;
+            &.uk-slidenav-next{
+                background-image: url(images/angle-right-red.png);
+                right: -40px;
+            }
+            &.uk-slidenav-previous{
+                background-image: url(images/angle-right-red.png);
+                left: -40px;
+                transform: rotate(180deg);
+                transform-origin: center;
+            }
+        }
+        .uk-slider{
+            li{
+                opacity: 1;
+            }
+        }
+    }
+    .bg-color{
+        background-color: #bcbbbc;
+        padding: 60px 45px;
     }
 }

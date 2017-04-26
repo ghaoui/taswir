@@ -1,15 +1,29 @@
 <?php get_header(); ?>
-<section class="block-title affiche production">
+<?php 
+    if ( have_posts() ) :
+        while ( have_posts() ) : the_post(); 
+?>
+<section class="block-title affiche">
     <div class="container">        
-        <h2 class="red">TASWIR PRODUCTIONS</h2> 
+        <h2 class="red"><?php the_title();?></h2>    
     </div>
 </section>
-<section class="edito production bg-orange-motif">
+<section class="block-content affiche">
     <div class="container">
-        <ul class="uk-grid uk-grid-width-1-3" data-uk-scrollspy="{cls:'uk-animation-fade', target:'li', delay:600}">
+        <?php the_content();?>        
+    </div>
+</section>
+<?php                     
+        endwhile;
+        wp_reset_postdata(); 
+    endif; 
+?>
+<section class="edito production conference bg-orange-motif" data-uk-scrollspy="{cls:'uk-animation-fade', target:'li', delay:600}">
+    <div class="container">        
+        <ul class="uk-grid uk-grid-width-1-3" data-uk-grid-match>
         <?php 
             $args  = array(
-                'post_type' => 'production',
+                'post_type' => 'affiche',
                 'order' => 'ASC'
             );
             $the_query = new WP_Query( $args ); 
@@ -17,9 +31,8 @@
                 while ( $the_query->have_posts() ) : $the_query->the_post(); 
         ?>
             <li>
-                <h3 class="text-center ts-margin-top-negative"><?php the_title();?></h3>
                 <figure class="uk-overlay uk-overlay-hover">
-                    <img class="uk-overlay-spin" src="<?php the_field('affiche');?>" width="" height="" alt="">
+                    <img class="uk-overlay-spin" src="<?php the_field('image');?>" width="" height="" alt="">
                     <figcaption class="uk-overlay-panel uk-overlay-slide-top uk-flex">
                         <a href="<?php the_permalink();?>"><?php the_title();?></a>
                     </figcaption>
